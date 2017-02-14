@@ -17,6 +17,7 @@ const INITIAL_TOP = Platform.OS === 'ios' ? -80 : -60;
 export default class Search extends Component {
 
   static propTypes = {
+    style: StyleSheet
     data: PropTypes.array,
     placeholder: PropTypes.string,
     handleChangeText: PropTypes.func,
@@ -47,6 +48,7 @@ export default class Search extends Component {
   }
 
   static defaultProps = {
+    style: {},
     data: [],
     placeholder: 'Search',
     heightAdjust: 0,
@@ -171,6 +173,7 @@ export default class Search extends Component {
 
   render = () => {
     const {
+      style,
       placeholder,
       heightAdjust,
       backgroundColor,
@@ -189,7 +192,7 @@ export default class Search extends Component {
       fontFamily
     } = this.props;
     return (
-      <Animated.View style={[styles.container, { top: this.state.top }]}>
+      <Animated.View style={[style, styles.container, { top: this.state.top }]}>
         {
           this.state.show &&
           <View style={[styles.navWrapper, { backgroundColor }]} >
