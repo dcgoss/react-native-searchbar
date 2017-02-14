@@ -30,6 +30,7 @@ export default class Search extends Component {
     iconColor: PropTypes.string,
     textColor: PropTypes.string,
     placeholderTextColor: PropTypes.string,
+    selectionColor: PropTypes.string,
     animate: PropTypes.bool,
     animationDuration: PropTypes.number,
     showOnLoad: PropTypes.bool,
@@ -176,6 +177,7 @@ export default class Search extends Component {
       iconColor,
       textColor,
       placeholderTextColor,
+      selectionColor,
       onBack,
       hideBack,
       hideX,
@@ -224,6 +226,7 @@ export default class Search extends Component {
                 onSubmitEditing={() => onSubmitEditing ? onSubmitEditing() : null}
                 placeholder={placeholder}
                 placeholderTextColor={placeholderTextColor}
+                selectionColor={selectionColor}
                 value={this.state.input}
                 underlineColorAndroid='transparent'
                 returnKeyType='search'
@@ -251,11 +254,11 @@ export default class Search extends Component {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    zIndex: 10,
+    // zIndex: 10,
     position: 'absolute',
-    shadowRadius: 5,
-    shadowOpacity: 0.7,
-    elevation: 2,
+    // shadowRadius: 5,
+    // shadowOpacity: 0.7,
+    // elevation: 2,
   },
   navWrapper: {
     width: Dimensions.get('window').width,
